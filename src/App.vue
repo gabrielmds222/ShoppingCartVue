@@ -1,27 +1,86 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Produtos from "./components/Produtos.vue";
+import Resumo from "./components/Resumo.vue";
+</script>
 
 <template>
-  <div class="pagina">
-    <h1 class="titulo">Carrinho de compras</h1>
-    <main class="conteudo">
-      <!-- <Produtos /> -->
-      <!-- <Resumo /> -->
-    </main>
-  </div>
+  <main class="pagina">
+    <div class="container-titulo">
+      <h1 class="titulo">Carrinho de compras</h1>
+    </div>
+    <div class="conteudo">
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th colSpan="{4}"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <Produtos />
+          </tbody>
+        </table>
+      </section>
+      <aside>
+        <Resumo />
+      </aside>
+    </div>
+  </main>
 </template>
 
 <style scoped>
 .pagina {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eeeeee;
   padding: 0 30px 30px;
-  width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  width: 100vw;
+  margin: auto;
 }
 
-.titulo {
-  font-size: 32px;
+.container-titulo {
+  margin-top: 40px;
+}
+
+.conteudo {
+  display: flex;
+  width: 90vw;
+  flex-direction: row;
+  margin-top: calc(2rem + 10px);
+}
+
+section {
+  background-color: #fff;
+  flex: 1;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  border-bottom: 3px solid #eee;
+}
+
+thead th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+tbody tr {
+  border-bottom: 3px solid #eee;
+}
+
+tbody td {
   padding: 30px 0;
+}
+
+aside {
+  background-color: #e0e0e0;
+  width: 35%;
 }
 </style>
