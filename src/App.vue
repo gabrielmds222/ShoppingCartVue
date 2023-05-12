@@ -1,6 +1,17 @@
 <script setup lang="ts">
-import Produtos from "./components/Produtos.vue";
-import Resumo from "./components/Resumo.vue";
+import Produto from "./components/Produto.vue";
+
+// export default {
+//   name: 'App',
+
+//   components: {
+//    Produto,
+//   },
+
+//   data: () => ({
+//     //
+//   }),
+// };
 </script>
 
 <template>
@@ -10,6 +21,7 @@ import Resumo from "./components/Resumo.vue";
     </div>
     <div class="conteudo">
       <section>
+        <Contagem />
         <table>
           <thead>
             <tr>
@@ -17,7 +29,7 @@ import Resumo from "./components/Resumo.vue";
             </tr>
           </thead>
           <tbody>
-            <Produtos />
+            <Produto />
           </tbody>
         </table>
       </section>
@@ -54,6 +66,7 @@ import Resumo from "./components/Resumo.vue";
 section {
   background-color: #fff;
   flex: 1;
+  padding: 10px 40px;
 }
 table {
   width: 100%;
@@ -69,14 +82,6 @@ thead th {
   padding-bottom: 10px;
   text-transform: uppercase;
   color: #666;
-}
-
-tbody tr {
-  border-bottom: 3px solid #eee;
-}
-
-tbody td {
-  padding: 30px 0;
 }
 
 aside {
